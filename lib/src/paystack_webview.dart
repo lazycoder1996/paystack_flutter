@@ -27,9 +27,11 @@ class PaystackWebview extends StatefulWidget {
     this.metaData,
     required this.onSuccess,
     required this.onCancelled,
+    this.plan,
   });
 
   final String secretKey;
+  final String? plan;
   final double amount;
   final String email;
   final String? reference;
@@ -60,6 +62,7 @@ class _PaystackWebviewState extends State<PaystackWebview> {
       PaystackRequest request = PaystackRequest(
           amount: widget.amount,
           email: widget.email,
+          plan: widget.plan,
           callback: widget.callbackUrl,
           reference: widget.reference,
           metaData: widget.metaData,

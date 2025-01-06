@@ -88,12 +88,16 @@ class PaystackFlutter {
 
     /// A callback function to be called when the payment is canceled.
     required Function(PaystackCallback) onCancelled,
+
+    /// Plan id for subscription
+    String? plan,
   }) async {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => PaystackWebview(
           secretKey: secretKey,
+          plan: plan,
           email: email,
           amount: amount,
           reference: reference,

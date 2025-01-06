@@ -77,9 +77,14 @@ class PaystackRequest {
   /// [currency] is optional and represents the currency used for the transaction. If omitted, it defaults to NGN(Nigerian Naira).
   ///
   /// [metaData] is optional and represents any additional metadata you want to associate with the transaction.
+
+  String? plan;
+
+  /// [plan] is optional and represents the plan code for recurring billing.
   PaystackRequest({
     required this.amount,
     required this.email,
+    this.plan,
     this.reference,
     required this.callback,
     this.metaData,
@@ -113,6 +118,9 @@ class PaystackRequest {
     /// Only include optional fields if they have a value.
     if (reference != null) {
       baseJson["reference"] = reference;
+    }
+    if(plan != null){
+      baseJson["plan"] = plan;
     }
     if (metaData != null) {
       baseJson["metadata"] = metaData;
