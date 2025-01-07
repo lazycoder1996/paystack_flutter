@@ -48,7 +48,8 @@ class PaystackWebview extends StatefulWidget {
   State<PaystackWebview> createState() => _PaystackWebviewState();
 }
 
-class _PaystackWebviewState extends State<PaystackWebview> {
+class _PaystackWebviewState extends State<PaystackWebview>
+    with AutomaticKeepAliveClientMixin {
   late PayStackResponse payStackResponse;
   late PaystackCallback callback;
 
@@ -221,4 +222,7 @@ class _PaystackWebviewState extends State<PaystackWebview> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
