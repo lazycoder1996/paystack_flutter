@@ -128,6 +128,7 @@ class _PaystackWebviewState extends State<PaystackWebview>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: SafeArea(
         child: FutureBuilder<PayStackResponse>(
